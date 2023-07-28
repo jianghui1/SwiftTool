@@ -8,10 +8,10 @@
 import Foundation
 
 // 使用 async 关键字声明异步函数
-public func fetchData(from urlString: String) async throws -> Data {
+public func fetchData(from urlString: String) async throws -> (Data, URLResponse) {
     if let url = URL(string: urlString) {
-        let (data, _) = try await URLSession.shared.data(from: url)
-        return data
+        let result = try await URLSession.shared.data(from: url)
+        return result
     }
     throw URLError(.badURL)
 }

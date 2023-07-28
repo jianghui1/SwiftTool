@@ -6,7 +6,7 @@ import PackageDescription
 let package = Package(
     name: "SwiftTool",
     platforms: [
-        .iOS(.v16),
+        .iOS(.v14),
         .macOS(.v13)
     ],
     products: [
